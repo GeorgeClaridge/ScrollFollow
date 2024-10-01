@@ -10,13 +10,13 @@
     let windowHeight;
   
     function handleMouseMove(event) {
-      y = event.clientY - squareSize / 2; // Center the square vertically on the cursor
+      y = event.clientY - squareSize / 2; // Centers the square vertically on the cursor
       updateRotation();
     }
     
     function updateRotation() {
-      // Calculate rotation based on vertical position
-      // 0 at the middle, -90 at the top, 90 at the bottom
+      // The rotation of the square is based on the vertical position.
+      // In the middle it is at 0, At the top it is -90 and at the bottom it is 90
       const middleY = windowHeight / 2;
       const maxRotation = 90;
       rotation = ((y + squareSize / 2 - middleY) / middleY) * maxRotation;
@@ -38,9 +38,8 @@
   </script>
 
   <div
-    class="square rounded-lg bg-lime-300 border-2 border-black"
+    class="square rounded-lg bg-lime-300 border-2 border-black fixed z-20"
     style="
-      position: fixed;
       right: {rightOffset}px;
       top: {y}px;
       width: {squareSize}px;
@@ -50,7 +49,7 @@
     "
   ></div>
 
-  <div class="Track fixed right-[60px] h-full top-0 w-2 border-x-2 border-black bg-gray-400 -z-10"></div>
+  <div class="track fixed right-[60px] h-full top-0 w-2 border-x-2 border-black bg-purple-200 z-10"></div>
   
   <style>
     .square {
